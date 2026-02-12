@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galactic Birthday Surprise</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Space+Grotesk:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -29,7 +32,7 @@
             color: #fff;
             overflow-x: hidden;
             min-height: 100vh;
-            background-image: 
+            background-image:
                 radial-gradient(2px 2px at 20px 30px, rgba(238, 238, 238, 0.8), transparent),
                 radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.9), transparent),
                 radial-gradient(2px 2px at 50px 160px, rgba(221, 221, 221, 0.7), transparent),
@@ -39,8 +42,13 @@
         }
 
         @keyframes starsMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 300px 300px; }
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 300px 300px;
+            }
         }
 
         /* Countdown Overlay */
@@ -66,20 +74,21 @@
             background: rgba(10, 10, 30, 0.3);
             backdrop-filter: blur(20px);
             border: 3px solid var(--purple);
-            box-shadow: 
+            box-shadow:
                 0 0 60px rgba(124, 58, 237, 0.6),
                 inset 0 0 40px rgba(124, 58, 237, 0.2);
             animation: pulseGlow 2s infinite alternate;
         }
 
         @keyframes pulseGlow {
-            0% { 
-                box-shadow: 
+            0% {
+                box-shadow:
                     0 0 60px rgba(124, 58, 237, 0.6),
                     inset 0 0 40px rgba(124, 58, 237, 0.2);
             }
-            100% { 
-                box-shadow: 
+
+            100% {
+                box-shadow:
                     0 0 90px rgba(124, 58, 237, 0.9),
                     inset 0 0 60px rgba(124, 58, 237, 0.3);
             }
@@ -113,8 +122,15 @@
         }
 
         @keyframes numberPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         .countdown-message {
@@ -161,11 +177,12 @@
         }
 
         @keyframes starPulse {
-            0% { 
+            0% {
                 box-shadow: 0 0 20px var(--yellow);
                 transform: translate(-50%, -50%) scale(1);
             }
-            100% { 
+
+            100% {
                 box-shadow: 0 0 50px var(--yellow);
                 transform: translate(-50%, -50%) scale(1.2);
             }
@@ -210,8 +227,13 @@
         }
 
         @keyframes orbit {
-            0% { transform: rotate(0deg) translateX(75px) rotate(0deg); }
-            100% { transform: rotate(360deg) translateX(75px) rotate(-360deg); }
+            0% {
+                transform: rotate(0deg) translateX(75px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(75px) rotate(-360deg);
+            }
         }
 
         /* Main Content */
@@ -223,7 +245,9 @@
         }
 
         @keyframes contentFadeIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         /* Animated Cursor */
@@ -285,12 +309,24 @@
             filter: drop-shadow(0 0 10px var(--yellow));
         }
 
-        .title-icon:nth-child(1) { animation-delay: 0s; }
-        .title-icon:nth-child(3) { animation-delay: 1.5s; }
+        .title-icon:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .title-icon:nth-child(3) {
+            animation-delay: 1.5s;
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-30px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
         }
 
         .birthday-title {
@@ -307,14 +343,15 @@
         }
 
         @keyframes titleGlow {
-            0% { 
-                text-shadow: 
+            0% {
+                text-shadow:
                     0 0 20px rgba(236, 72, 153, 0.3),
                     0 0 40px rgba(168, 85, 247, 0.2),
                     0 0 60px rgba(59, 130, 246, 0.1);
             }
-            100% { 
-                text-shadow: 
+
+            100% {
+                text-shadow:
                     0 0 30px rgba(236, 72, 153, 0.6),
                     0 0 60px rgba(168, 85, 247, 0.4),
                     0 0 90px rgba(59, 130, 246, 0.2);
@@ -348,8 +385,15 @@
         }
 
         @keyframes messageFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .birthday-message i {
@@ -403,7 +447,7 @@
             margin: 0 auto;
             overflow: hidden;
             border-radius: 30px;
-            box-shadow: 
+            box-shadow:
                 0 0 80px rgba(124, 58, 237, 0.5),
                 inset 0 0 40px rgba(255, 255, 255, 0.1);
             border: 4px solid var(--purple);
@@ -421,11 +465,14 @@
             padding: 10px 14px;
             border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 6px 20px rgba(124,58,237,0.4);
+            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
             display: none;
             font-size: 18px;
         }
-        #audio-toggle:focus { outline: 2px solid rgba(255,255,255,0.15); }
+
+        #audio-toggle:focus {
+            outline: 2px solid rgba(255, 255, 255, 0.15);
+        }
 
         .carousel {
             display: flex;
@@ -703,8 +750,13 @@
         }
 
         @keyframes cakeBounce {
-            0% { transform: translateY(0) rotate(0deg); }
-            100% { transform: translateY(-30px) rotate(5deg); }
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-30px) rotate(5deg);
+            }
         }
 
         .cake-icon {
@@ -731,12 +783,13 @@
         }
 
         @keyframes flameFlicker {
-            0% { 
-                transform: scale(1); 
+            0% {
+                transform: scale(1);
                 background: linear-gradient(to bottom, var(--yellow), #ea580c);
             }
-            100% { 
-                transform: scale(1.2); 
+
+            100% {
+                transform: scale(1.2);
                 background: linear-gradient(to bottom, #ea580c, #dc2626);
             }
         }
@@ -791,15 +844,19 @@
             0% {
                 transform: translate(0, 0) rotate(0deg);
             }
+
             25% {
                 transform: translate(100px, 50px) rotate(90deg);
             }
+
             50% {
                 transform: translate(50px, 150px) rotate(180deg);
             }
+
             75% {
                 transform: translate(-50px, 100px) rotate(270deg);
             }
+
             100% {
                 transform: translate(0, 0) rotate(360deg);
             }
@@ -819,6 +876,7 @@
                 transform: translateY(-100px) rotate(0deg);
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(500px) rotate(360deg);
                 opacity: 0;
@@ -877,14 +935,34 @@
             filter: drop-shadow(0 0 10px var(--yellow));
         }
 
-        .footer-star:nth-child(2) { animation-delay: 0.2s; }
-        .footer-star:nth-child(3) { animation-delay: 0.4s; }
-        .footer-star:nth-child(4) { animation-delay: 0.6s; }
-        .footer-star:nth-child(5) { animation-delay: 0.8s; }
+        .footer-star:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .footer-star:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .footer-star:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .footer-star:nth-child(5) {
+            animation-delay: 0.8s;
+        }
 
         @keyframes starTwinkle {
-            0%, 100% { opacity: 0.3; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
         }
 
         .footer-note {
@@ -905,25 +983,25 @@
                 font-size: 4rem;
                 letter-spacing: 6px;
             }
-            
+
             .carousel {
                 height: 500px;
             }
-            
+
             .timeline-container::before {
                 left: 30px;
             }
-            
+
             .timeline-item {
                 flex-direction: row !important;
                 justify-content: flex-start;
                 padding-left: 80px;
             }
-            
+
             .timeline-content {
                 width: 100%;
             }
-            
+
             .timeline-icon {
                 left: 30px;
             }
@@ -933,59 +1011,59 @@
             .countdown-number {
                 font-size: 8rem;
             }
-            
+
             .countdown-title {
                 font-size: 2.5rem;
                 letter-spacing: 4px;
             }
-            
+
             .birthday-title {
                 font-size: 2.8rem;
                 letter-spacing: 3px;
             }
-            
+
             .title-icon {
                 font-size: 2rem;
             }
-            
+
             .subtitle {
                 font-size: 1.5rem;
             }
-            
+
             .birthday-message {
                 flex-direction: column;
                 gap: 15px;
                 padding: 20px;
                 border-radius: 30px;
             }
-            
+
             .birthday-message p {
                 font-size: 1.4rem;
             }
-            
+
             .carousel {
                 height: 400px;
             }
-            
+
             .image-caption {
                 font-size: 1.6rem;
                 padding: 15px 25px;
             }
-            
+
             .carousel-btn {
                 width: 50px;
                 height: 50px;
                 font-size: 1.5rem;
             }
-            
+
             .section-title {
                 font-size: 2.5rem;
             }
-            
+
             .timeline-year {
                 font-size: 2rem;
             }
-            
+
             .timeline-title {
                 font-size: 1.6rem;
             }
@@ -1012,6 +1090,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Audio Player -->
     <audio id="bg-audio" preload="auto">
@@ -1029,7 +1108,7 @@
                 Get ready for a journey through space and memories!
             </p>
             <h2 class="countdown-subtitle" id="countdown-text">Initializing Star Systems...</h2>
-            
+
             <div class="galaxy-loader">
                 <div class="orbit">
                     <div class="center-star"></div>
@@ -1045,7 +1124,7 @@
     <div id="main-content">
         <!-- Animated Cursor -->
         <div class="cursor"></div>
-        
+
         <!-- Header -->
         <header class="header">
             <div class="title-container">
@@ -1054,7 +1133,7 @@
                 <i class="fas fa-crown title-icon"></i>
             </div>
             <p class="subtitle">A Cosmic Celebration for an Extraordinary Soul</p>
-            
+
             <div class="birthday-message">
                 <i class="fas fa-star"></i>
                 <p>May your special day shine brighter than a supernova!</p>
@@ -1101,12 +1180,12 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="floating-objects">
                     <div class="floating-obj"></div>
                     <div class="floating-obj"></div>
                     <div class="floating-obj"></div>
-                    
+
                     <!-- Confetti -->
                     <div class="confetti" style="left: 10%; animation-delay: 0s; background: var(--pink);"></div>
                     <div class="confetti" style="left: 20%; animation-delay: 0.5s; background: var(--cyan);"></div>
@@ -1149,7 +1228,7 @@
         const countdownText = document.getElementById('countdown-text');
         const countdownOverlay = document.getElementById('countdown-overlay');
         const mainContent = document.getElementById('main-content');
-        
+
         const countdownMessages = [
             "Warp Drive Engaged...",
             "Charting Star Maps...",
@@ -1162,17 +1241,17 @@
             "Final Approach...",
             "Happy Birthday!"
         ];
-        
+
         function updateCountdown() {
             countdownElement.textContent = countdown;
             countdownText.textContent = countdownMessages[10 - countdown];
-            
+
             // Add special effects for last 3 seconds
             if (countdown <= 3) {
                 countdownElement.style.animation = 'numberPulse 0.5s infinite';
                 document.body.style.animation = 'starsMove 10s linear infinite';
             }
-            
+
             if (countdown > 0) {
                 countdown--;
                 setTimeout(updateCountdown, 1000);
@@ -1180,18 +1259,18 @@
                 // Countdown complete - reveal main content
                 countdownOverlay.style.opacity = '0';
                 countdownOverlay.style.transform = 'scale(1.5)';
-                
+
                 setTimeout(() => {
                     countdownOverlay.style.display = 'none';
                     mainContent.style.display = 'block';
-                    
+
                     // Initialize all components and auto-play audio after a brief delay
                     setTimeout(() => {
                         initCarousel();
                         initTimeline();
                         initCursor();
                         createConfetti();
-                        
+
                         // Auto-play the song (with user-interaction fallback)
                         const bgAudio = document.getElementById('bg-audio');
                         const audioToggle = document.getElementById('audio-toggle');
@@ -1217,7 +1296,7 @@
                                 function playOnInteraction() {
                                     bgAudio.play().then(() => {
                                         if (audioToggle) audioToggle.style.display = 'none';
-                                    }).catch(() => {});
+                                    }).catch(() => { });
                                     window.removeEventListener('click', playOnInteraction);
                                     window.removeEventListener('keydown', playOnInteraction);
                                     window.removeEventListener('touchstart', playOnInteraction);
@@ -1231,33 +1310,33 @@
                 }, 1000);
             }
         }
-        
+
         // Start countdown when page loads
         setTimeout(updateCountdown, 1000);
-        
+
         // Animated Cursor
         function initCursor() {
             const cursor = document.querySelector('.cursor');
             const trails = [];
-            
+
             document.addEventListener('mousemove', (e) => {
                 // Update main cursor
                 cursor.style.left = e.clientX + 'px';
                 cursor.style.top = e.clientY + 'px';
-                
+
                 // Create trail effect
                 const trail = document.createElement('div');
                 trail.className = 'cursor-trail';
                 trail.style.left = e.clientX + 'px';
                 trail.style.top = e.clientY + 'px';
-                
+
                 // Randomize trail color
                 const colors = ['#7e22ce', '#ec4899', '#3b82f6', '#06b6d4', '#fbbf24'];
                 trail.style.background = colors[Math.floor(Math.random() * colors.length)];
-                
+
                 document.body.appendChild(trail);
                 trails.push(trail);
-                
+
                 // Remove old trails
                 if (trails.length > 10) {
                     const oldTrail = trails.shift();
@@ -1265,7 +1344,7 @@
                         oldTrail.parentNode.removeChild(oldTrail);
                     }
                 }
-                
+
                 // Fade out trails
                 trails.forEach((trail, index) => {
                     const opacity = 0.7 - (index * 0.07);
@@ -1273,38 +1352,30 @@
                     trail.style.transform = `translate(-50%, -50%) scale(${1 - index * 0.1})`;
                 });
             });
-            
+
             // Cursor hover effects
             document.querySelectorAll('button, .indicator, .carousel-slide').forEach(element => {
                 element.addEventListener('mouseenter', () => {
                     cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
                     cursor.style.borderColor = '#fbbf24';
                 });
-                
+
                 element.addEventListener('mouseleave', () => {
                     cursor.style.transform = 'translate(-50%, -50%) scale(1)';
                     cursor.style.borderColor = '#7e22ce';
                 });
             });
         }
-        
+
         // Image Carousel
         function initCarousel() {
             const carousel = document.getElementById('carousel');
             const indicators = document.getElementById('indicators');
             const prevBtn = document.getElementById('prevBtn');
             const nextBtn = document.getElementById('nextBtn');
-            
+
             // Sample images - REPLACE THESE WITH YOUR ACTUAL IMAGES
             const images = [
-                {
-                    url: 'nandhini 1.jpeg',
-                    caption: 'You look so beautiful'
-                },
-                {
-                    url: 'nandhini 2.jpeg',
-                    caption: 'Stay happy always'
-                },
                 {
                     url: 'nandhini 6.jpeg',
                     caption: 'Our First Pic we are as twin'
@@ -1326,15 +1397,15 @@
                     caption: 'We all will Orbiting in Perfect Harmony'
                 },
             ];
-        
+
             let currentIndex = 0;
-            
+
             // Create slides and indicators
             images.forEach((image, index) => {
                 // Create slide
                 const slide = document.createElement('div');
                 slide.className = 'carousel-slide';
-                
+
                 // Use img tag instead of background-image for better reliability
                 const img = document.createElement('img');
                 img.src = image.url;
@@ -1346,63 +1417,63 @@
                 img.style.position = 'absolute';
                 img.style.top = '0';
                 img.style.left = '0';
-                
+
                 slide.appendChild(img);
                 slide.innerHTML += `<div class="image-caption">${image.caption}</div>`;
                 carousel.appendChild(slide);
-                
+
                 // Create indicator
                 const indicator = document.createElement('button');
                 indicator.className = `indicator ${index === 0 ? 'active' : ''}`;
                 indicator.addEventListener('click', () => goToSlide(index));
                 indicators.appendChild(indicator);
             });
-            
+
             // Navigation functions
             function goToSlide(index) {
                 currentIndex = index;
                 carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-                
+
                 // Update active indicator
                 document.querySelectorAll('.indicator').forEach((indicator, i) => {
                     indicator.classList.toggle('active', i === currentIndex);
                 });
             }
-            
+
             function nextSlide() {
                 currentIndex = (currentIndex + 1) % images.length;
                 goToSlide(currentIndex);
             }
-            
+
             function prevSlide() {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
                 goToSlide(currentIndex);
             }
-            
+
             // Event listeners
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
-            
+
             // Auto-rotate
             let autoRotate = setInterval(nextSlide, 5000);
-            
+
             // Pause auto-rotate on hover
             carousel.addEventListener('mouseenter', () => clearInterval(autoRotate));
             carousel.addEventListener('mouseleave', () => {
                 autoRotate = setInterval(nextSlide, 5000);
             });
-            
+
             // Keyboard navigation
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'ArrowLeft') prevSlide();
                 if (e.key === 'ArrowRight') nextSlide();
             });
         }
-        
+
         // Timeline
         function initTimeline() {
             const timeline = document.getElementById('timeline');
-            
+
             // Sample timeline data - CUSTOMIZE THIS WITH YOUR ACTUAL MEMORIES
             const timelineData = [
                 {
@@ -1431,12 +1502,12 @@
                     description: "Today, celebrating another orbit around the sun together. Here's to infinite more adventures across the universe of our friendship!"
                 }
             ];
-            
+
             // Create timeline items
             timelineData.forEach((item, index) => {
                 const timelineItem = document.createElement('div');
                 timelineItem.className = 'timeline-item';
-                
+
                 timelineItem.innerHTML = `
                     <div class="timeline-content">
                         <div class="timeline-year">${item.year}</div>
@@ -1447,10 +1518,10 @@
                         <i class="fas fa-${getIconForIndex(index)}"></i>
                     </div>
                 `;
-                
+
                 timeline.appendChild(timelineItem);
             });
-            
+
             // Add scroll animation
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1459,22 +1530,22 @@
                     }
                 });
             }, { threshold: 0.3 });
-            
+
             document.querySelectorAll('.timeline-item').forEach(item => {
                 observer.observe(item);
             });
-            
+
             function getIconForIndex(index) {
                 const icons = ['star', 'rocket', 'moon', 'sun', 'heart'];
                 return icons[index % icons.length];
             }
         }
-        
+
         // Confetti Effect
         function createConfetti() {
             const colors = ['#7e22ce', '#ec4899', '#3b82f6', '#06b6d4', '#fbbf24'];
             const animationContainer = document.querySelector('.animation-container');
-            
+
             for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
@@ -1485,15 +1556,16 @@
                 confetti.style.animationDelay = Math.random() * 5 + 's';
                 confetti.style.animationDuration = Math.random() * 3 + 3 + 's';
                 confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                
+
                 animationContainer.appendChild(confetti);
             }
         }
-        
-        
+
+
         // Add birthday message in console
         console.log("%c✨ HAPPY BIRTHDAY! ✨", "color: #fbbf24; font-size: 24px; font-weight: bold; text-shadow: 0 0 10px #fbbf24");
         console.log("%cMay your day be filled with cosmic joy and stellar moments!", "color: #7e22ce; font-size: 16px;");
     </script>
 </body>
+
 </html>
