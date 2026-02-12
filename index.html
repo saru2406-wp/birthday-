@@ -409,6 +409,24 @@
             border: 4px solid var(--purple);
         }
 
+        /* Audio toggle button (shown when autoplay is blocked) */
+        #audio-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 2001;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(124,58,237,0.4);
+            display: none;
+            font-size: 18px;
+        }
+        #audio-toggle:focus { outline: 2px solid rgba(255,255,255,0.15); }
+
         .carousel {
             display: flex;
             transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
@@ -1000,6 +1018,7 @@
         <source src="./Kelaamalae Kayil Vantha Katti Thangam Neeye.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
+    <button id="audio-toggle" aria-label="Play music" title="Enable music">🔊</button>
     <!-- Countdown Overlay -->
     <div id="countdown-overlay">
         <div class="countdown-container">
@@ -1173,12 +1192,40 @@
                         initCursor();
                         createConfetti();
                         
-                        // Auto-play the song
+                        // Auto-play the song (with user-interaction fallback)
                         const bgAudio = document.getElementById('bg-audio');
+                        const audioToggle = document.getElementById('audio-toggle');
                         if (bgAudio) {
                             bgAudio.volume = 0.3;
                             bgAudio.loop = true;
-                            bgAudio.play().catch(e => console.log('Audio play failed:', e));
+
+                            // Try to play immediately; if browser blocks autoplay, show a play button
+                            bgAudio.play().then(() => {
+                                if (audioToggle) audioToggle.style.display = 'none';
+                            }).catch(e => {
+                                console.log('Audio play failed (autoplay blocked?):', e);
+                                if (audioToggle) {
+                                    audioToggle.style.display = 'block';
+                                    audioToggle.addEventListener('click', function handleClick() {
+                                        bgAudio.play().then(() => {
+                                            audioToggle.style.display = 'none';
+                                        }).catch(err => console.log('Play after click failed:', err));
+                                    }, { once: true });
+                                }
+
+                                // Also try to play on the first user interaction (anyclick/keydown/touch)
+                                function playOnInteraction() {
+                                    bgAudio.play().then(() => {
+                                        if (audioToggle) audioToggle.style.display = 'none';
+                                    }).catch(() => {});
+                                    window.removeEventListener('click', playOnInteraction);
+                                    window.removeEventListener('keydown', playOnInteraction);
+                                    window.removeEventListener('touchstart', playOnInteraction);
+                                }
+                                window.addEventListener('click', playOnInteraction);
+                                window.addEventListener('keydown', playOnInteraction);
+                                window.addEventListener('touchstart', playOnInteraction);
+                            });
                         }
                     }, 500);
                 }, 1000);
@@ -1250,6 +1297,14 @@
             
             // Sample images - REPLACE THESE WITH YOUR ACTUAL IMAGES
             const images = [
+                {
+                    url: 'nandhini 1.jpeg',
+                    caption: 'You look so beautiful'
+                },
+                {
+                    url: 'nandhini 2.jpeg',
+                    caption: 'Stay happy always'
+                },
                 {
                     url: 'nandhini 6.jpeg',
                     caption: 'Our First Pic we are as twin'
